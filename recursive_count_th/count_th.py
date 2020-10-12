@@ -7,4 +7,15 @@ def count_th(word):
     
     # TBC
     
-    pass
+ 
+    count = 0
+    letter_index = 0
+    if len(word) <= 1:
+        return 0
+
+    if word[letter_index : letter_index + 2] == "th":
+            count += 1 + count_th(word[letter_index + 1: ])
+ 
+    if word[letter_index: letter_index + 2] != "th":
+        count = count_th(word[letter_index + 1: ])
+    return count
